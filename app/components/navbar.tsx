@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
@@ -25,7 +26,16 @@ const Navbar = () => {
         <div>
             <div className="flex flex-row">
                 <div>
-                    GEACRE Logo
+                    <Link href="/" passHref>
+                        <Image
+                            src="/green_expectations_logo.png"
+                            alt="Green Expectations Logo"
+                            width={35}
+                            height={35}
+                            className="ml-8 transition hover:filer-coffee-green hover:brightness-90"
+                            priority
+                        />
+                    </Link>
                 </div>
                 <ul className="flex">
                     {menuItem.map((menu) => {
